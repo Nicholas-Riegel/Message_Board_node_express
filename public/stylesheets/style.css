@@ -13,10 +13,14 @@ label{
   flex-direction: column;
   /* border: 1px solid red; */
 }
-#input-text{
+textarea{
+  width: 30%;
   height: 4rem;
+  font: 14px Arial;
+  padding: 3px;
 }
 
 input{
+  font: 14px Arial;
   width: 30%;
 }

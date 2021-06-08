@@ -5,10 +5,23 @@ block content
     form( method="POST" action='/new')
         label User: 
             br
-            input(type='text' name='user' required)
+            input(
+                type='text' 
+                name='user'
+                maxlength='20' 
+                placeholder='max 20'
+                required
+            )
         br 
         label Text:
             br 
-            input(type='text' id='input-text' name='text')
+            textarea(
+                type='text' 
+                id='input-text' 
+                name='text' 
+                maxlength='150'
+                placeholder='max 150'
+                required
+            )
         br
         button Submit
