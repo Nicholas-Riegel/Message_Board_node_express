@@ -1,8 +1,8 @@
 extends layout
 
 block content
-  h1= title
   for x in messages
     h2 #{x.user} says: 
     p= x.text
     p Date Posted: #{x.added}
+    hr

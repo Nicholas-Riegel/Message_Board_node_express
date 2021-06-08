@@ -15,15 +15,12 @@ const messages = [
 ]
 
 router.get('/', function(req, res, next) {
-  res.render(
-    'index',
-    { title: "Mini Messageboard", messages }
-  )
+  res.render('index', { messages } )
 })
 
 router.get('/new', function (req, res, next) {
-  res.render('form');
-});
+  res.render('new')
+})
 
 router.post('/new', (req, res) => {
   const user = req.body.user

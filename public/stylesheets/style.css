@@ -5,4 +5,18 @@ body {
 
 a {
   color: #00B7FF;
+  margin-right: .75rem;
+}
+
+label{
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+}
+#input-text{
+  height: 4rem;
+}
+
+input{
+  width: 30%;
 }
