@@ -1,31 +1,36 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-const messages = [
-   {
-     text: "Hi there!",
-     user: "Amando",
-     added: new Date()
-   },
-   {
-     text: "Hello World!",
-     user: "Charles",
-     added: new Date()
-   }
+let messages = [
+  {
+    id: 0,
+    text: "Hi there!",
+    user: "Amando",
+    added: new Date()
+  },
 ]
 
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.render('index', { messages } )
 })
 
-router.get('/new', function (req, res, next) {
+router.delete('/:idx', (req, res) => {
+  const date = req.params.idx
+  messages = messages.filter(x => x.added !== date)
+  console.log(messages)
+  res.redirect('/')
+})
+
+router.get('/new', (req, res, next) => {
   res.render('new')
 })
 
 router.post('/new', (req, res) => {
   const user = req.body.user
   const text = req.body.text
-  messages.push({ text, user, added: new Date() })
+  const id = messages[messages.length - 1].id + 1
+  messages.push({ text, user, added: new Date(), id})
+  console.log(messages)
   res.redirect('/')
 })
 
